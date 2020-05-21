@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O8O-AF-CeO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,468 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VideoRcordingAndPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k23-fN-8jU">
+                                <rect key="frame" x="141" y="74" width="132" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Record Video"/>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="2Gg-aa-o1l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oik-2W-Fxe">
+                                <rect key="frame" x="155" y="140" width="104" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Play Video"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="p92-xx-vCv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Oik-2W-Fxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fZm-Ql-IDm"/>
+                            <constraint firstItem="k23-fN-8jU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="wYC-Wx-Otm"/>
+                            <constraint firstItem="Oik-2W-Fxe" firstAttribute="top" secondItem="k23-fN-8jU" secondAttribute="bottom" constant="30" id="wad-9E-hGA"/>
+                            <constraint firstItem="k23-fN-8jU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wlS-1u-x4m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="115"/>
+        </scene>
+        <!--Common Video View Controller-->
+        <scene sceneID="dUX-bT-toz">
+            <objects>
+                <viewController storyboardIdentifier="CommonVideoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1ap-cl-Czv" customClass="CommonVideoViewController" customModule="VideoRcordingAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GhA-sO-fBf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i93-oa-vUx">
+                                <rect key="frame" x="105.5" y="214" width="203" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Add Overlay to video"/>
+                                <connections>
+                                    <segue destination="Yly-s6-f7w" kind="presentation" id="VtO-al-fiG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoy-Sx-RUx">
+                                <rect key="frame" x="110" y="133" width="194" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Add Border to video"/>
+                                <connections>
+                                    <segue destination="HWe-Ui-sYw" kind="presentation" id="oGY-Ox-R3k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtM-2T-Zir">
+                                <rect key="frame" x="93" y="457" width="228" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Add Animation to video"/>
+                                <connections>
+                                    <segue destination="Rwl-Tq-jZB" kind="presentation" id="zm8-v8-9QQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyY-0Y-0SX">
+                                <rect key="frame" x="127.5" y="376" width="159" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Add Tilt to video"/>
+                                <connections>
+                                    <segue destination="Eez-Ni-c9i" kind="presentation" id="Rdc-0e-9wR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tz7-N7-vDy">
+                                <rect key="frame" x="104.5" y="295" width="205" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="Add Subtitle to video"/>
+                                <connections>
+                                    <segue destination="egg-WC-yME" kind="presentation" id="h71-NY-cxZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cyY-0Y-0SX" firstAttribute="top" secondItem="Tz7-N7-vDy" secondAttribute="bottom" constant="45" id="240-xo-hpE"/>
+                            <constraint firstItem="i93-oa-vUx" firstAttribute="top" secondItem="uoy-Sx-RUx" secondAttribute="bottom" constant="45" id="5eq-Nt-BqU"/>
+                            <constraint firstItem="XtM-2T-Zir" firstAttribute="top" secondItem="cyY-0Y-0SX" secondAttribute="bottom" constant="45" id="MNE-6o-OpN"/>
+                            <constraint firstItem="uoy-Sx-RUx" firstAttribute="top" secondItem="W7o-eP-zMi" secondAttribute="top" constant="45" id="Pbj-RE-LBP"/>
+                            <constraint firstItem="uoy-Sx-RUx" firstAttribute="centerX" secondItem="GhA-sO-fBf" secondAttribute="centerX" id="a10-NU-Anc"/>
+                            <constraint firstItem="cyY-0Y-0SX" firstAttribute="centerX" secondItem="GhA-sO-fBf" secondAttribute="centerX" id="agW-Lt-AzM"/>
+                            <constraint firstItem="Tz7-N7-vDy" firstAttribute="top" secondItem="i93-oa-vUx" secondAttribute="bottom" constant="45" id="hKS-ZA-SUn"/>
+                            <constraint firstItem="XtM-2T-Zir" firstAttribute="centerX" secondItem="GhA-sO-fBf" secondAttribute="centerX" id="jtH-h4-Jx1"/>
+                            <constraint firstItem="Tz7-N7-vDy" firstAttribute="centerX" secondItem="GhA-sO-fBf" secondAttribute="centerX" id="st2-fq-c3s"/>
+                            <constraint firstItem="i93-oa-vUx" firstAttribute="centerX" secondItem="GhA-sO-fBf" secondAttribute="centerX" id="tg8-BB-VfR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W7o-eP-zMi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CXk-lb-JPP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFC-vN-1e4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="59"/>
+        </scene>
+        <!--Add Animation View Controller-->
+        <scene sceneID="Ub0-o8-5KV">
+            <objects>
+                <viewController storyboardIdentifier="AddAnimationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rwl-Tq-jZB" customClass="AddAnimationViewController" customModule="VideoRcordingAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="01A-e4-XQH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-D4-uhX">
+                                <rect key="frame" x="107" y="284" width="200" height="274.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mq-Su-tEg">
+                                        <rect key="frame" x="22" y="0.0" width="156" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Add Video Asset"/>
+                                        <connections>
+                                            <action selector="loadAsset:" destination="Rwl-Tq-jZB" eventType="touchUpInside" id="OSS-MZ-Whq"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HO-Yi-2f8">
+                                        <rect key="frame" x="24" y="86" width="152.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iXY-Mp-zMX">
+                                        <rect key="frame" x="0.0" y="157.5" width="200" height="32"/>
+                                        <segments>
+                                            <segment title="Rotate"/>
+                                            <segment title="Fade"/>
+                                            <segment title="Twinkle"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKm-4R-TGa">
+                                        <rect key="frame" x="21" y="238.5" width="158" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Generate Output"/>
+                                        <connections>
+                                            <action selector="generateOutput:" destination="Rwl-Tq-jZB" eventType="touchUpInside" id="PFl-Cc-hYB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1dR-D4-uhX" firstAttribute="centerY" secondItem="01A-e4-XQH" secondAttribute="centerY" id="7qE-Kp-Lh0"/>
+                            <constraint firstItem="1dR-D4-uhX" firstAttribute="centerX" secondItem="01A-e4-XQH" secondAttribute="centerX" id="veT-LZ-oN2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CHF-oX-A0e"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationSelectSegment" destination="iXY-Mp-zMX" id="j4h-iT-DWx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRC-lO-nhn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2516" y="48"/>
+        </scene>
+        <!--Add Tilt View Controller-->
+        <scene sceneID="eLl-AD-igb">
+            <objects>
+                <viewController storyboardIdentifier="AddTiltViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eez-Ni-c9i" customClass="AddTiltViewController" customModule="VideoRcordingAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5e5-yY-eSi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="p4t-uw-40y">
+                                <rect key="frame" x="113.5" y="284" width="187" height="274.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAl-S5-kvf">
+                                        <rect key="frame" x="15.5" y="0.0" width="156" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Add Video Asset"/>
+                                        <connections>
+                                            <action selector="loadAsset:" destination="Eez-Ni-c9i" eventType="touchUpInside" id="iwT-Yb-MhY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Tilt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lm-H6-ern">
+                                        <rect key="frame" x="48.5" y="86" width="90.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PNB-QI-IG8">
+                                        <rect key="frame" x="0.0" y="157.5" width="187" height="32"/>
+                                        <segments>
+                                            <segment title="Tilt Back"/>
+                                            <segment title="Tilt Forward"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ol-fq-MaS">
+                                        <rect key="frame" x="14.5" y="238.5" width="158" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Generate Output"/>
+                                        <connections>
+                                            <action selector="generateOutput:" destination="Eez-Ni-c9i" eventType="touchUpInside" id="LVG-vc-wzr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p4t-uw-40y" firstAttribute="centerY" secondItem="5e5-yY-eSi" secondAttribute="centerY" id="UdZ-M7-Ccx"/>
+                            <constraint firstItem="p4t-uw-40y" firstAttribute="centerX" secondItem="5e5-yY-eSi" secondAttribute="centerX" id="XCf-Qg-qzR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sqc-nQ-HHK"/>
+                    </view>
+                    <connections>
+                        <outlet property="tiltSegment" destination="PNB-QI-IG8" id="WfA-ly-gsu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmX-0n-kQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="-696"/>
+        </scene>
+        <!--Add Subtitle View Controller-->
+        <scene sceneID="mwZ-j6-kOS">
+            <objects>
+                <viewController storyboardIdentifier="AddSubtitleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="egg-WC-yME" customClass="AddSubtitleViewController" customModule="VideoRcordingAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wED-DS-pCt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nuk-Vs-f7n">
+                                <rect key="frame" x="129" y="282.5" width="156" height="277.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-ix-iAN">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Add Video Asset"/>
+                                        <connections>
+                                            <action selector="loadAsset:" destination="egg-WC-yME" eventType="touchUpInside" id="M0o-lw-Ypt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uew-M1-GFU">
+                                        <rect key="frame" x="21.5" y="86" width="113.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter some text " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JaB-NT-5li">
+                                        <rect key="frame" x="11.5" y="157.5" width="133.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7w-GE-NH5">
+                                        <rect key="frame" x="4.5" y="241.5" width="147" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Genrate Output"/>
+                                        <connections>
+                                            <action selector="generateOutput:" destination="egg-WC-yME" eventType="touchUpInside" id="tmZ-CH-1bd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nuk-Vs-f7n" firstAttribute="centerX" secondItem="wED-DS-pCt" secondAttribute="centerX" id="LMc-JL-kiN"/>
+                            <constraint firstItem="nuk-Vs-f7n" firstAttribute="centerY" secondItem="wED-DS-pCt" secondAttribute="centerY" id="d9J-nz-CIl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6pK-uU-RID"/>
+                    </view>
+                    <connections>
+                        <outlet property="subTitle1" destination="JaB-NT-5li" id="2Ra-Hq-Idq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tar-L9-Jis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="-1377"/>
+        </scene>
+        <!--Add Border View Controller-->
+        <scene sceneID="VNw-hN-ucf">
+            <objects>
+                <viewController storyboardIdentifier="AddBorderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HWe-Ui-sYw" customClass="AddBorderViewController" customModule="VideoRcordingAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jVL-Fn-Xlo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2H-jX-ZQh">
+                                <rect key="frame" x="129" y="30" width="156" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Add Video Asset"/>
+                                <connections>
+                                    <action selector="loadAsset:" destination="HWe-Ui-sYw" eventType="touchUpInside" id="wbq-xH-ZJ4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Border Width" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe2-xa-cpl">
+                                <rect key="frame" x="147" y="96" width="120" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Border Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts3-rR-cJM">
+                                <rect key="frame" x="150" y="208" width="114" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z9L-5C-ERS">
+                                <rect key="frame" x="133" y="148" width="148" height="31"/>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MOu-HG-fvs">
+                                <rect key="frame" x="93.5" y="260" width="227" height="32"/>
+                                <segments>
+                                    <segment title="Blue"/>
+                                    <segment title="Red"/>
+                                    <segment title="Green"/>
+                                    <segment title="White"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVd-AD-BqN">
+                                <rect key="frame" x="128" y="321" width="158" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Generate Output"/>
+                                <connections>
+                                    <action selector="generateOutput:" destination="HWe-Ui-sYw" eventType="touchUpInside" id="JgD-lJ-J2R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Z9L-5C-ERS" firstAttribute="centerX" secondItem="jVL-Fn-Xlo" secondAttribute="centerX" id="0hj-4D-PAg"/>
+                            <constraint firstItem="ts3-rR-cJM" firstAttribute="centerX" secondItem="jVL-Fn-Xlo" secondAttribute="centerX" id="2Ss-8A-yyJ"/>
+                            <constraint firstItem="Z9L-5C-ERS" firstAttribute="top" secondItem="xe2-xa-cpl" secondAttribute="bottom" constant="30" id="5xe-Bk-H2O"/>
+                            <constraint firstItem="Z9L-5C-ERS" firstAttribute="leading" secondItem="hBq-qv-Ckp" secondAttribute="leading" constant="135" id="DWo-36-wMw"/>
+                            <constraint firstItem="MOu-HG-fvs" firstAttribute="top" secondItem="ts3-rR-cJM" secondAttribute="bottom" constant="30" id="Slk-WH-JI7"/>
+                            <constraint firstItem="ts3-rR-cJM" firstAttribute="top" secondItem="Z9L-5C-ERS" secondAttribute="bottom" constant="30" id="U5P-r2-jys"/>
+                            <constraint firstItem="xe2-xa-cpl" firstAttribute="top" secondItem="l2H-jX-ZQh" secondAttribute="bottom" constant="30" id="Wxa-TH-q8M"/>
+                            <constraint firstItem="xe2-xa-cpl" firstAttribute="centerX" secondItem="jVL-Fn-Xlo" secondAttribute="centerX" id="gl5-u1-9Pu"/>
+                            <constraint firstItem="VVd-AD-BqN" firstAttribute="centerX" secondItem="jVL-Fn-Xlo" secondAttribute="centerX" id="hcr-nG-5Sz"/>
+                            <constraint firstItem="VVd-AD-BqN" firstAttribute="top" secondItem="MOu-HG-fvs" secondAttribute="bottom" constant="30" id="jAx-OB-o4D"/>
+                            <constraint firstItem="MOu-HG-fvs" firstAttribute="centerX" secondItem="jVL-Fn-Xlo" secondAttribute="centerX" id="miQ-RU-4EV"/>
+                            <constraint firstItem="l2H-jX-ZQh" firstAttribute="centerX" secondItem="jVL-Fn-Xlo" secondAttribute="centerX" id="muw-Wr-c3E"/>
+                            <constraint firstItem="l2H-jX-ZQh" firstAttribute="top" secondItem="hBq-qv-Ckp" secondAttribute="top" constant="30" id="vJO-en-vTf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hBq-qv-Ckp"/>
+                    </view>
+                    <connections>
+                        <outlet property="colorSegment" destination="MOu-HG-fvs" id="JAF-p8-7eb"/>
+                        <outlet property="widthBar" destination="Z9L-5C-ERS" id="uZM-7R-THQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzC-VV-KOM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="-2806"/>
+        </scene>
+        <!--Add Overlay View Controller-->
+        <scene sceneID="4nm-f3-Hho">
+            <objects>
+                <viewController storyboardIdentifier="AddOverlayViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yly-s6-f7w" customClass="AddOverlayViewController" customModule="VideoRcordingAndPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J3j-Id-SiG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="x9a-88-rRj">
+                                <rect key="frame" x="61" y="217" width="292" height="408.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOU-gf-Rwn">
+                                        <rect key="frame" x="68" y="0.0" width="156" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Add Video Asset"/>
+                                        <connections>
+                                            <action selector="loadAsset:" destination="Yly-s6-f7w" eventType="touchUpInside" id="o2o-Ug-QEi"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Frame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV7-k6-vQb">
+                                        <rect key="frame" x="87.5" y="86" width="117" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-OP-del">
+                                        <rect key="frame" x="47.5" y="157.5" width="197" height="32"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                            <segment title="Third"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GIO-5c-1Fh">
+                                        <rect key="frame" x="0.0" y="238.5" width="292" height="84"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="iEM-t7-sdh">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="SvJ-VV-6wG"/>
+                                                    <constraint firstAttribute="width" constant="84" id="oSD-1R-8y0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-2" translatesAutoresizingMaskIntoConstraints="NO" id="5S3-mk-bY6">
+                                                <rect key="frame" x="104" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="84" id="3UO-Jq-gpD"/>
+                                                    <constraint firstAttribute="height" constant="84" id="9e2-ha-FNj"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame-3" translatesAutoresizingMaskIntoConstraints="NO" id="a3g-1I-xLO">
+                                                <rect key="frame" x="208" y="0.0" width="84" height="84"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="Hcx-0e-X6r"/>
+                                                    <constraint firstAttribute="width" constant="84" id="Jh3-6E-nSK"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5H-Af-9PD">
+                                        <rect key="frame" x="67" y="372.5" width="158" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Generate Output"/>
+                                        <connections>
+                                            <action selector="generateOutput:" destination="Yly-s6-f7w" eventType="touchUpInside" id="Fo1-kF-AFm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="x9a-88-rRj" firstAttribute="centerY" secondItem="J3j-Id-SiG" secondAttribute="centerY" id="gbe-hY-wLA"/>
+                            <constraint firstItem="x9a-88-rRj" firstAttribute="centerX" secondItem="J3j-Id-SiG" secondAttribute="centerX" id="miC-YE-xmw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vNi-xf-sfM"/>
+                    </view>
+                    <connections>
+                        <outlet property="frameSelectSegment" destination="OE4-OP-del" id="tZ3-cy-JWe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xGs-U0-vSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="-2056"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nr5-J6-7fF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O8O-AF-CeO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gjt-Yn-7iP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1ap-cl-Czv" kind="relationship" relationship="rootViewController" id="tez-se-sMh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zRc-mE-NVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1034.7826086956522" y="58.928571428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Frame-1" width="1280" height="1280"/>
+        <image name="Frame-2" width="1280" height="1280"/>
+        <image name="Frame-3" width="1280" height="1280"/>
+    </resources>
 </document>

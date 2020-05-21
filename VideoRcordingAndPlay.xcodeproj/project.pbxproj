@@ -13,6 +13,12 @@
 		D96EAC0C2462CD08002B2F17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96EAC0A2462CD08002B2F17 /* Main.storyboard */; };
 		D96EAC0E2462CD0E002B2F17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96EAC0D2462CD0E002B2F17 /* Assets.xcassets */; };
 		D96EAC112462CD0E002B2F17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96EAC0F2462CD0E002B2F17 /* LaunchScreen.storyboard */; };
+		D9878E032462E47C0010A860 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9878E022462E47C0010A860 /* CommonViewController.swift */; };
+		D9878E052462FBF40010A860 /* AddBorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9878E042462FBF40010A860 /* AddBorderViewController.swift */; };
+		D9878E072462FDE30010A860 /* AddOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9878E062462FDE30010A860 /* AddOverlayViewController.swift */; };
+		D9878E092462FED70010A860 /* AddAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9878E082462FED70010A860 /* AddAnimationViewController.swift */; };
+		D9878E0B2462FF800010A860 /* AddSubtitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9878E0A2462FF800010A860 /* AddSubtitleViewController.swift */; };
+		D9878E0D2463001F0010A860 /* AddTiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9878E0C2463001F0010A860 /* AddTiltViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		D96EAC0D2462CD0E002B2F17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D96EAC102462CD0E002B2F17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D96EAC122462CD0E002B2F17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9878E022462E47C0010A860 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		D9878E042462FBF40010A860 /* AddBorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorderViewController.swift; sourceTree = "<group>"; };
+		D9878E062462FDE30010A860 /* AddOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOverlayViewController.swift; sourceTree = "<group>"; };
+		D9878E082462FED70010A860 /* AddAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimationViewController.swift; sourceTree = "<group>"; };
+		D9878E0A2462FF800010A860 /* AddSubtitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubtitleViewController.swift; sourceTree = "<group>"; };
+		D9878E0C2463001F0010A860 /* AddTiltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTiltViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,12 @@
 				D96EAC042462CD08002B2F17 /* AppDelegate.swift */,
 				D96EAC062462CD08002B2F17 /* SceneDelegate.swift */,
 				D96EAC082462CD08002B2F17 /* ViewController.swift */,
+				D9878E022462E47C0010A860 /* CommonViewController.swift */,
+				D9878E042462FBF40010A860 /* AddBorderViewController.swift */,
+				D9878E062462FDE30010A860 /* AddOverlayViewController.swift */,
+				D9878E082462FED70010A860 /* AddAnimationViewController.swift */,
+				D9878E0A2462FF800010A860 /* AddSubtitleViewController.swift */,
+				D9878E0C2463001F0010A860 /* AddTiltViewController.swift */,
 				D96EAC0A2462CD08002B2F17 /* Main.storyboard */,
 				D96EAC0D2462CD0E002B2F17 /* Assets.xcassets */,
 				D96EAC0F2462CD0E002B2F17 /* LaunchScreen.storyboard */,
@@ -138,8 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9878E0D2463001F0010A860 /* AddTiltViewController.swift in Sources */,
 				D96EAC092462CD08002B2F17 /* ViewController.swift in Sources */,
+				D9878E052462FBF40010A860 /* AddBorderViewController.swift in Sources */,
+				D9878E032462E47C0010A860 /* CommonViewController.swift in Sources */,
+				D9878E092462FED70010A860 /* AddAnimationViewController.swift in Sources */,
+				D9878E072462FDE30010A860 /* AddOverlayViewController.swift in Sources */,
 				D96EAC052462CD08002B2F17 /* AppDelegate.swift in Sources */,
+				D9878E0B2462FF800010A860 /* AddSubtitleViewController.swift in Sources */,
 				D96EAC072462CD08002B2F17 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PYLYUH97BG;
 				INFOPLIST_FILE = VideoRcordingAndPlay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PYLYUH97BG;
 				INFOPLIST_FILE = VideoRcordingAndPlay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
